@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <input id="name" type="text" name="" value="">
+    <input id="phone" type="text" name="" value="">
+    <input id="email" type="text" name="" value="">
+    <input id="id" type="text" name="" value="">
+    <button type="button" name="button">Click Me</button>
+  </body>
+
+  <script type="text/javascript">
+    $("button").on("click", function(){
+      var name = $("#name").val();
+      var num = $("#phone").val();
+      var email = $("#email").val();
+      var id = $("#id").val();
+      $.post("/reseveration", {
+        name: name,
+        phoneNum: num,
+        email: email,
+        id: id
+      }, function(res){
+        console.log(res);
+      })
+    })
+  </script>
+
+</html>

@@ -22,23 +22,31 @@ app.use(bodyParser.json({
 
 // ------- GET & POST routes --------- //
 app.get("/?", function(req, res){
-  res.sendFile(path.join(__dirname, "index.html"));
-})
+  res.sendFile(path.join(__dirname, "home.html"));
+});
 
 app.get("/tables", function(req, res){
-  res.sendFile(path.join(__dirname, "viewTables.html"));
-})
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
 
 app.get("/reservation", function(req, res){
-  res.sendFile(path.join(__dirname, "reservation.html"));
-})
+  res.sendFile(path.join(__dirname, "reserve.html"));
+});
+
+app.get("/api/table", function(req, res){
+  res.json(req.body);
+});
+
+app.get("/api/waiting", function(req, res){
+  res.json(req.body);
+});
 
 app.post("/reservation", function(req, res){
   res.send(req.body);
   console.log(req.body);
-})
+});
 
 // ------- Listener ------------ //
 app.listen(PORT, function(){
   console.log("Application listening on PORT " + PORT);
-})
+});

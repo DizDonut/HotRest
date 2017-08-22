@@ -46,6 +46,11 @@ app.post("/reservation", function(req, res){
   console.log(req.body);
 });
 
+app.post("/waiting", function(req, res){
+  res.send(req.body);
+  console.log(req.body);
+});
+
 // ------- Listener ------------ //
 app.listen(PORT, function(){
   console.log("Application listening on PORT " + PORT);
